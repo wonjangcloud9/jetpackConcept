@@ -11,6 +11,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.jetpack_concept.ui.theme.JetpackconceptTheme
@@ -19,39 +20,26 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            JetpackconceptTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colors.background
-                ) {
-                    Column(
-                        modifier = Modifier
-                            .background(color = MaterialTheme.colors.primary),
-                        horizontalAlignment = Alignment.CenterHorizontally,
-                        verticalArrangement = Arrangement.Center
-                    ) {
-                        Column(
-                            modifier = Modifier
-                                .background(color = MaterialTheme.colors.secondary)
-                                .padding(10.dp)
-                        ) {
-                            Text("Hello")
-                            Spacer(modifier = Modifier.height(10.dp))
-                            Text("World!")
-                        }
-                        Spacer(modifier = Modifier.height(10.dp))
-                        Row(
-                            modifier = Modifier
-                                .background(color = MaterialTheme.colors.secondary)
-                                .padding(10.dp)
-                        ) {
-                            Text("Hello")
-                            Spacer(modifier = Modifier.width(10.dp))
-                            Text("World!")
-                        }
-                    }
+            Box(
+                modifier = Modifier
+                    .background(color = Color.Black)
+                    .fillMaxSize()
+            ) {
+                Text(
+                    "hello world",
+                    color = Color.White
+                )
+                Box(
+                    modifier = Modifier
+                        .fillMaxSize(),
+                    contentAlignment = Alignment.Center,
+                ){
+                    Text(
+                        "Hey mama",
+                        color = Color.White
+                    )
                 }
+
             }
         }
     }
